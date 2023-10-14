@@ -38,6 +38,4 @@ axs[2].set_title("Posisjon")
 axs[2].set_ylabel("$s$ [m]")
 axs[2].set_xlabel("$t$ [s]")
 
-print(fig.get_size_inches())
-
 plt.show()
