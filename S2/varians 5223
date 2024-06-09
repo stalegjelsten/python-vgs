@@ -1,0 +1,34 @@
+X = [-100, 100]
+P = [(5 / 6) ** 4, (1 - (5 / 6) ** 4)]
+
+E = 0
+for i in range(2):
+    E += X[i] * P[i]
+
+Var = 0
+for i in range(2):
+    Var += (X[i] - E) ** 2 * P[i]
+
+sigma = Var ** (1 / 2)
+print(f"E(X) = {E:.2f}, Var(X) = {Var:.2f}, σ = {sigma:.2f}")
+
+Y = [-100, 100]
+P = [(1 - (5 / 6) ** 4), (5 / 6) ** 4]
+
+EY = 0
+for i in range(2):
+    EY += Y[i] * P[i]
+
+VarY = 0
+for i in range(2):
+    VarY += (Y[i] - EY) ** 2 * P[i]
+
+sigmaY = VarY ** (1 / 2)
+print(f"E(Y) = {EY:.2f}, Var(Y) = {VarY:.2f}, σ = {sigmaY:.2f}")
+
+print(
+    "Lager ny hendelse X+Y. X+Y vil alltid være 0 siden den ene alltid"
+    "vil betale den andre. Var(X+Y) vil selvsagt også være 0 siden dette"
+    " er det eneste utfallet (DET ER IKKE NOEN VARIASJON HER). Hvis vi legger"
+    f"sammen Var(X) og Var(Y) får vi {Var+VarY:.2f} som er veldig langt unna 0"
+)
